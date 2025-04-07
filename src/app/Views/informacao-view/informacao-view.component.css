@@ -1,0 +1,20 @@
+
+section{
+    padding: 20px;
+    height: 400px;
+    overflow: auto;
+}
+
+p, li{
+    color: white;
+}
+
+strong, li::marker{
+    padding-left: 20px;
+    color: #5eead4;
+}
+
+li{
+    margin-left: 60px;
+    margin-bottom: 5px;
+}

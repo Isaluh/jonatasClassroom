@@ -1,0 +1,32 @@
+header{
+    background-color: #334155;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    padding: 10px;
+}
+
+nav{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    padding: 7px;
+    border-radius: 5px;
+}
+
+a:hover{
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+a.ativo{
+    border: 1px solid #14b8a6;
+    background-color: rgba(20,184,166, 0.3);
+    
+}

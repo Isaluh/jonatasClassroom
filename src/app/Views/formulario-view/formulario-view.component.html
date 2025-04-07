@@ -1,0 +1,25 @@
+<mainComponent>
+    <section>
+        <form>
+            <div>
+                <h1>Formulário</h1>
+                <p>Cadastre os alunos</p>
+            </div>
+    
+            <div>
+                <input type="text" name="" id="" placeholder="Nome" [(ngModel)]="alunoAdd.nome" [ngModelOptions]="{standalone: true}">
+                <input type="number" name="" id="" placeholder="Idade" [(ngModel)]="alunoAdd.idade" [ngModelOptions]="{standalone: true}">
+                <input type="number" name="" id="" placeholder="CPF" [(ngModel)]="alunoAdd.cpf" [ngModelOptions]="{standalone: true}">
+            </div>
+    
+            <button (click)="cadastrar()">Cadastrar</button>
+        </form>
+        <span class="linha"></span>
+        <div class="listagem">
+            <ul *ngIf="alunos.length != 0">
+                <li *ngFor="let aluno of alunos"> <span>Nome:</span> {{aluno.nome}} <span>- Idade:</span> {{aluno.idade}} <span>- CPF:</span> {{aluno.cpf}} </li>
+            </ul>
+            <p *ngIf="alunos.length == 0">Nenhum aluno cadastrado até o momento.</p>
+        </div>
+    </section>
+</mainComponent>
