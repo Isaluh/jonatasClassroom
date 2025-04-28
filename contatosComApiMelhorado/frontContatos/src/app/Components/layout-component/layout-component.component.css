@@ -1,0 +1,29 @@
+main{
+    width: 100vw;
+    height: 100vh;
+    background-color: #0f0f0f;
+
+    display: grid;
+    grid-template-columns: 0.5fr 4px 1fr;
+
+    & section:nth-child(1){
+        align-self: center;
+    }
+
+    & section:nth-child(2){
+        width: 100% !important;
+        justify-self: center;
+    }
+}
+
+.linha{
+    align-self: center;
+    height: 80%;
+    width: 1px;
+    background-color: azure;
+}
+
+section{
+    padding: 20px;
+    color: white;
+}

@@ -17,16 +17,18 @@ public class Contato {
     private int telefone;
     private String email;
     private String profissao;
+    private boolean favorito;
 
     public Contato() {
     }
 
-    public Contato(Integer id, String nome, int telefone, String email, String profissao) {
+    public Contato(Integer id, String nome, int telefone, String email, String profissao, boolean favorito) {
         this.id = id;
         this.nome = nome;
         this.telefone = telefone;
         this.email = email;
         this.profissao = profissao;
+        this.favorito = favorito;
     }
 
     public Integer getId() {
@@ -60,13 +62,21 @@ public class Contato {
     public void setEmail(String email) {
         this.email = email;
     }
-    
+
     public String getProfissao() {
         return profissao;
     }
-    
+
     public void setProfissao(String profissao) {
         this.profissao = profissao;
+    }
+
+    public boolean isFavorito() {
+        return favorito;
+    }
+
+    public void setFavorito(boolean favorito) {
+        this.favorito = favorito;
     }
 
     
