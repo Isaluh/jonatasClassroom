@@ -1,0 +1,15 @@
+div{
+    display: flex;
+    justify-content: end;
+    width: 100%;
+}
+
+select{
+    width: 20%;
+    color: white;
+    padding: 10px 8px;
+    border-radius: 8px;
+    outline: none;
+    background-color: #334155;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}

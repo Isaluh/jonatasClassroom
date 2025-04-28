@@ -1,5 +1,4 @@
 import { TestBed } from '@angular/core/testing';
-
 import { ContatoServiceService } from './contato-service.service';
 
 describe('ContatoServiceService', () => {

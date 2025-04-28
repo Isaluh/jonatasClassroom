@@ -1,9 +1,13 @@
 package com.isaluh.apiContatos.Entities;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -17,17 +21,25 @@ public class Contato {
     private int telefone;
     private String email;
     private String profissao;
+
+    @ManyToOne
+    @JoinColumn(name = "grupo_id", nullable = true)
+    @JsonDeserialize(using = GrupoDeserializer.class)
+    private Grupo grupo;
+
     private boolean favorito;
 
     public Contato() {
     }
 
-    public Contato(Integer id, String nome, int telefone, String email, String profissao, boolean favorito) {
+    public Contato(Integer id, String nome, int telefone, String email, String profissao, Grupo grupo,
+            boolean favorito) {
         this.id = id;
         this.nome = nome;
         this.telefone = telefone;
         this.email = email;
         this.profissao = profissao;
+        this.grupo = grupo;
         this.favorito = favorito;
     }
 
@@ -69,6 +81,14 @@ public class Contato {
 
     public void setProfissao(String profissao) {
         this.profissao = profissao;
+    }
+
+    public Grupo getGrupo() {
+        return grupo;
+    }
+
+    public void setGrupo(Grupo grupo) {
+        this.grupo = grupo;
     }
 
     public boolean isFavorito() {

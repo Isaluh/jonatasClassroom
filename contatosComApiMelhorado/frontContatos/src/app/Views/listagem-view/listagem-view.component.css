@@ -17,28 +17,9 @@
 
 .contatos{
     padding-right: 20px;
-    height: 580px;
+    height: 700px;
     overflow-y: auto;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 30px;
 }
-
-
-/* input{
-    width: 100%;
-    color: white;
-    padding: 10px 8px;
-    border-radius: 8px;
-    outline: none;
-    background-color: #334155;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-input::placeholder{
-    color: rgba(255, 255, 255, 0.3);
-}
-
-input:focus{
-    border: 1px solid #5eead4;
-} */

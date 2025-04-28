@@ -1,9 +1,9 @@
 <main>
     <section>
-        <cadastroView (reload)="reloadCtt()"/>
+        <cadastroView (reload)="reloadAll()" [grupos]="grupos"/>
     </section>
     <span class="linha"></span>
     <section>
-        <listagemView [contatos]="contatos"/>
+        <listagemView [contatos]="contatos" [grupos]="grupos"/>
     </section>
 </main>

@@ -45,5 +45,4 @@ public class Favoritos {
         this.contato = contato;
     }
 
-    
 }

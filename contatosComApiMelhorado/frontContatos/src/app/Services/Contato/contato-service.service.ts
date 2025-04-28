@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Contato } from '../Models/contatos';
+import { Contato } from '../../Models/contatos';
 import { HttpClient } from '@angular/common/http';
+import { forkJoin } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -32,6 +33,14 @@ export class ContatoServiceService {
   excluirContato(id: number) {
     let url : string = ContatoServiceService.API_url + `/${id}`;
     return this.httpClient.delete<Contato>(url)
+  }
+
+  toggleFav(contato : Contato){
+    let urlFav : string = ContatoServiceService.API_url.split('/contatos')[0] + `/favoritos/update/${contato.id}`;
+    return forkJoin([
+      this.editContato(contato),
+      this.httpClient.put<Contato>(urlFav, contato)
+    ]);
   }
 
 }

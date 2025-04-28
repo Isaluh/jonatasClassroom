@@ -1,21 +1,24 @@
-import { Component, EventEmitter, Output } from '@angular/core';
-import { Contato } from '../../Models/contatos';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Contato, Grupo } from '../../Models/contatos';
 import { FormsModule } from '@angular/forms';
-import { ContatoServiceService } from '../../Services/contato-service.service';
+import { ContatoServiceService } from '../../Services/Contato/contato-service.service';
+import { GrupoServiceService } from '../../Services/Grupo/grupo-service.service';
+import { NgFor, NgIf } from '@angular/common';
 
 @Component({
   selector: 'cadastroView',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, NgFor, NgIf],
   templateUrl: './cadastro-view.component.html',
   styleUrl: './cadastro-view.component.css'
 })
 export class CadastroViewComponent {
-  contatoAdd : Contato = {id: null, nome: '', telefone: null, email: '', profissao: '', favorito: false }
-
+  grupoAdd : Grupo = {id: null, nome: ''}
+  contatoAdd : Contato = {id: null, nome: '', telefone: null, email: '', profissao: '', grupo: null, favorito: false }
+  @Input() grupos : Grupo[] = []
   @Output() reload = new EventEmitter()
 
-  constructor(private contatoService : ContatoServiceService){}
+  constructor(private contatoService : ContatoServiceService, private grupoService : GrupoServiceService){}
 
   cadastrar(){
     if(!this.contatoAdd.nome.trim()){
@@ -29,8 +32,15 @@ export class CadastroViewComponent {
 
     this.contatoService.addContato(this.contatoAdd).subscribe(() => {
       this.reload.emit()
+      this.contatoAdd = {id: null, nome: '', telefone: null, email: '', profissao: '', grupo: null, favorito: false};
     });
     
-    this.contatoAdd = { id: null, nome: '', telefone: null, email: '', profissao: '', favorito: false };
+  }
+
+  criarGrupo(){
+    this.grupoService.addGrupo(this.grupoAdd).subscribe(() => {
+      this.reload.emit()
+      this.grupoAdd = {id: null, nome: ''}
+    })
   }
 }

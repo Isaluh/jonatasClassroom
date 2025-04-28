@@ -1,0 +1,8 @@
+<div>
+    <select *ngIf="grupos.length != 0" id="categoria" [(ngModel)]="filtro" (ngModelChange)="addFiltro()" [ngModelOptions]="{standalone: true}">
+        <option value="null" hidden selected>Filtrar</option>
+        <option value="null">Todos</option>
+        <option value="0">Favoritos</option>
+        <option *ngFor="let grp of grupos" [value]="grp.id">{{grp.nome}}</option>
+    </select>
+</div>

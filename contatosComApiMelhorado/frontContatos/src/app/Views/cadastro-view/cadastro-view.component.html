@@ -1,15 +1,37 @@
-<form>
-    <div>
-        <h1>Formulário</h1>
-        <p>Cadastre os contatos</p>
-    </div>
+<div class="pai">
+    <form>
+        <div>
+            <h1>Grupos</h1>
+            <p>Criar agrupamento</p>
+        </div>
+    
+        <input type="text" name="" id="" placeholder="Nome do grupo" [(ngModel)]="grupoAdd.nome" [ngModelOptions]="{standalone: true}">
+        
+        <button (click)="criarGrupo()">Criar</button>
+    </form>
 
-    <div>
-        <input type="text" name="" id="" placeholder="Nome" [(ngModel)]="contatoAdd.nome" [ngModelOptions]="{standalone: true}">
-        <input type="number" name="" id="" placeholder="Telefone" [(ngModel)]="contatoAdd.telefone" [ngModelOptions]="{standalone: true}">
-        <input type="email" name="" id="" placeholder="E-mail" [(ngModel)]="contatoAdd.email" [ngModelOptions]="{standalone: true}">
-        <input type="text" name="" id="" placeholder="Profissão" [(ngModel)]="contatoAdd.profissao" [ngModelOptions]="{standalone: true}">
-    </div>
-
-    <button (click)="cadastrar()">Cadastrar</button>
-</form>
+    <form>
+        <div>
+            <h1>Formulário</h1>
+            <p>Cadastre os contatos</p>
+        </div>
+    
+        <div>
+            <input type="text" name="" id="" placeholder="Nome" [(ngModel)]="contatoAdd.nome" [ngModelOptions]="{standalone: true}">
+            <input type="number" name="" id="" placeholder="Telefone" [(ngModel)]="contatoAdd.telefone" [ngModelOptions]="{standalone: true}">
+            <input type="email" name="" id="" placeholder="E-mail" [(ngModel)]="contatoAdd.email" [ngModelOptions]="{standalone: true}">
+            <input type="text" name="" id="" placeholder="Profissão" [(ngModel)]="contatoAdd.profissao" [ngModelOptions]="{standalone: true}">
+            <select *ngIf="grupos.length != 0" id="categoria" [(ngModel)]="contatoAdd.grupo" [ngModelOptions]="{standalone: true}">
+              <option value="null" hidden selected>Adicionar a um grupo</option>
+              <option *ngFor="let grp of grupos" [value]="grp.id">{{grp.nome}}</option>
+            </select>
+    
+            <div>
+                <input type="checkbox" name="favoritar" id="favoritar" [(ngModel)]="contatoAdd.favorito" [ngModelOptions]="{standalone: true}">
+                <label for="favoritar">Adicionar aos favoritos</label>
+            </div>
+        </div>
+    
+        <button (click)="cadastrar()">Cadastrar</button>
+    </form>
+</div>
