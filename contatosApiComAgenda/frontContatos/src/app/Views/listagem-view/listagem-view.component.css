@@ -1,0 +1,22 @@
+main {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.celular{
+    width: 30%;
+    height: 90%;
+    max-width: 30%;
+    max-height: 90%;
+    border-radius: 50px;
+    border: 5px solid black;
+}
+
+.listagem{
+    display: flex;
+    flex-direction: column;
+    padding: 30px 10px;
+}

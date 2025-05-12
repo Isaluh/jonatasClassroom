@@ -1,0 +1,27 @@
+.contact-card {
+    width: 100%;
+    display: flex;
+    cursor: pointer;
+    background-color: #f9f9f9;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+    padding: 10px;
+    border-bottom: 1px solid gray;
+    text-decoration: none;
+    color: inherit;
+}
+
+.contact-card:hover {
+    background-color: #e0e0e0;
+}
+
+.contact-info h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.contact-info p {
+    margin: 5px 0;
+    color: #666;
+}
