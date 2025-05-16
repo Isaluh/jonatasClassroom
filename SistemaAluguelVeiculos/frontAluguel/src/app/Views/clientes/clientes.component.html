@@ -9,10 +9,7 @@
             <h2>Clientes Cadastrados</h2>
             <div>
                 <div *ngFor="let cliente of clientes">
-                    <div>
-                        <iconChange icon="carro" />
-                        <h3>{{cliente.nome}}</h3>
-                    </div>
+                    <h3>{{cliente.nome}}</h3>
                     <p>CPF: {{cliente.cpf}}</p>
                 </div>
                 <p *ngIf="clientes.length == 0">Nenhum cliente cadastrado ainda.</p>

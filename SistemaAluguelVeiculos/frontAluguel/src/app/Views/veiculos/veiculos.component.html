@@ -9,8 +9,11 @@
             <h2>Veiculos Cadastrados</h2>
             <div>
                 <div *ngFor="let veiculo of veiculos">
-                    <h3>{{veiculo.modelo}}</h3>
-                    <p>CPF: {{veiculo.tipo}}</p>
+                    <div>
+                        <iconChange icon="carro" />
+                        <h3>{{veiculo.modelo}}</h3>
+                    </div>
+                    <p>Tipo: {{veiculo.tipo}}</p>
                 </div>
                 <p *ngIf="veiculos.length == 0">Nenhum veículo cadastrado ainda.</p>
             </div>
