@@ -1,0 +1,13 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --azul-normal: #2563eb
+}
+
+h1, h2, h3, p, a{
+    font-family: "Open Sans", sans-serif;
+}

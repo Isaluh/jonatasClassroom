@@ -1,0 +1,22 @@
+<main>
+    <header>
+        <span style="width: 32px; height: 32px;">
+            <iconChange icon="carro" />
+        </span>
+        <h1>Sistema de Aluguel de Veículos</h1>
+    </header>
+
+    <section>
+        <nav>
+            <a routerLink="/clientes" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Clientes</a>
+            <a routerLink="/veiculos" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Veículos</a>
+            <a routerLink="/alugueis" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Aluguéis</a>
+        </nav>
+
+        <ng-content></ng-content>
+    </section>
+
+    <footer>
+        <p>&#64;2025 - Venha conhecer e usar o nosso sistema</p>
+    </footer>
+</main>
