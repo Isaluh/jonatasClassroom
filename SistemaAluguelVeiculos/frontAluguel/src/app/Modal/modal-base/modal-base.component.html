@@ -1,0 +1,12 @@
+<div class="fundo" (click)="cancelar()">
+    <form (click)="$event.stopPropagation()">
+        <h2>{{titulo}}</h2>
+        <div class="conteudoModal">
+            <ng-content></ng-content>
+        </div>
+        <div class="acoes">
+            <buttonsComponent [text]="'Cancelar'" [tipoButton]="'button'" [variant]="'decline'" (click)="cancelar()" />
+            <buttonsComponent [text]="'Salvar'" [tipoButton]="'button'" [variant]="'apply'" (click)="prosseguir()" />
+        </div>
+    </form>
+</div>

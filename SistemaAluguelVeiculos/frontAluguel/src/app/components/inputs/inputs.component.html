@@ -1,0 +1,11 @@
+<label [for]="idInput">
+  <span>{{ nomeCampo }}</span>
+  <input
+    [required]="request"
+    [type]="tipoInput"
+    [name]="idInput"
+    [id]="idInput"
+    [placeholder]="placeholder"
+    [value]="valor"
+    (input)="handleInput($event)">
+</label>

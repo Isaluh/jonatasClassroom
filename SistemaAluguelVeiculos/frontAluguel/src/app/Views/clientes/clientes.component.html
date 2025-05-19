@@ -1,6 +1,6 @@
 <baseLayout>
     <div class="conteudo">
-        <button>
+        <button (click)="abrirModal()">
             <span style="width: 12px;"><iconChange icon="mais" /></span>
             Adicionar cliente
         </button>
@@ -8,51 +8,19 @@
         <div class="listagem">
             <h2>Clientes Cadastrados</h2>
             <div>
-                <div>
-                    <h3>João Silva</h3>
-                    <p>CPF: 123.456.789-00</p>
+                <div *ngFor="let cliente of clientes">
+                    <div>
+                        <iconChange icon="carro" />
+                        <h3>{{cliente.nome}}</h3>
+                    </div>
+                    <p>CPF: {{cliente.cpf}}</p>
                 </div>
-                <div>
-                    <h3>Maria Oliveira</h3>
-                    <p>CPF: 987.654.321-00</p>
-                </div>
-                <div>
-                    <h3>João Silva</h3>
-                    <p>CPF: 123.456.789-00</p>
-                </div>
-                <div>
-                    <h3>Maria Oliveira</h3>
-                    <p>CPF: 987.654.321-00</p>
-                </div>
-                <div>
-                    <h3>João Silva</h3>
-                    <p>CPF: 123.456.789-00</p>
-                </div>
-                <div>
-                    <h3>Maria Oliveira</h3>
-                    <p>CPF: 987.654.321-00</p>
-                </div>
-                <div>
-                    <h3>João Silva</h3>
-                    <p>CPF: 123.456.789-00</p>
-                </div>
-                <div>
-                    <h3>Maria Oliveira</h3>
-                    <p>CPF: 987.654.321-00</p>
-                </div>
-                <div>
-                    <h3>João Silva</h3>
-                    <p>CPF: 123.456.789-00</p>
-                </div>
-                <div>
-                    <h3>Maria Oliveira</h3>
-                    <p>CPF: 987.654.321-00</p>
-                </div>
-                <div>
-                    <h3>Maria Oliveira</h3>
-                    <p>CPF: 987.654.321-00</p>
-                </div>
+                <p *ngIf="clientes.length == 0">Nenhum cliente cadastrado ainda.</p>
             </div>
         </div>
     </div>
+    <modalBaseModal *ngIf="abrirCadastro" [titulo]="'Cadastrar Cliente'" (acao)="acaoModal($event)">
+        <inputsComponent [idInput]="'nomeCliente'" [nomeCampo]="'Nome'" [placeholder]="'Nome Completo'" [tipoInput]="'text'" [(ngModel)]="clienteadd.nome"/>
+        <inputsComponent [idInput]="'cpfCliente'" [nomeCampo]="'CPF'" [placeholder]="'000.000.000-00'" [tipoInput]="'text'" [(ngModel)]="clienteadd.cpf" />
+    </modalBaseModal>
 </baseLayout>

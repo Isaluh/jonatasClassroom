@@ -8,6 +8,6 @@
     --azul-normal: #2563eb
 }
 
-h1, h2, h3, p, a{
+h1, h2, h3, p, a, input, span, button{
     font-family: "Open Sans", sans-serif;
 }

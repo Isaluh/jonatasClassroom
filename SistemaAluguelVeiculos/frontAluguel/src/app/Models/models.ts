@@ -4,20 +4,20 @@ export enum TipoVeiculo {
 }
 
 export interface Veiculo {
-  id: string;
+  id: number | null;
   modelo: string;
   tipo: TipoVeiculo;
   disponivel: boolean;
 }
 
 export interface Cliente {
-  id: string;
+  id: number | null;
   nome: string;
   cpf: string;
 }
 
 export interface Aluguel {
-  id: string;
+  id: number;
   cliente: Cliente;
   veiculo: Veiculo;
   dataInicio: Date;

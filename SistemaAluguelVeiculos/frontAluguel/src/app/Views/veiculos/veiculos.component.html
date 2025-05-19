@@ -1,0 +1,23 @@
+<baseLayout>
+    <div class="conteudo">
+        <button (click)="abrirModal()">
+            <span style="width: 12px;"><iconChange icon="mais" /></span>
+            Adicionar veículo
+        </button>
+
+        <div class="listagem">
+            <h2>Veiculos Cadastrados</h2>
+            <div>
+                <div *ngFor="let veiculo of veiculos">
+                    <h3>{{veiculo.modelo}}</h3>
+                    <p>CPF: {{veiculo.tipo}}</p>
+                </div>
+                <p *ngIf="veiculos.length == 0">Nenhum veículo cadastrado ainda.</p>
+            </div>
+        </div>
+    </div>
+    <modalBaseModal *ngIf="abrirCadastro" [titulo]="'Cadastrar Veículo'" (acao)="acaoModal($event)">
+        <inputsComponent [idInput]="'modeloVeiculo'" [nomeCampo]="'Modelo'" [placeholder]="'Ex: Honda Civic'" [tipoInput]="'text'" [(ngModel)]="veiculoadd.modelo"/>
+        <!-- <inputsComponent [idInput]="'cpfCliente'" [nomeCampo]="'CPF'" [placeholder]="'000.000.000-00'" [tipoInput]="'text'" [(ngModel)]="veiculoadd.tipo" /> -->
+    </modalBaseModal>
+</baseLayout>
